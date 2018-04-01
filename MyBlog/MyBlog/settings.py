@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = reverse_lazy('sucessLogin')
 # LOGIN_URL = reverse_lazy('login')
 # LOGOUT_URL = reverse_lazy('logout')
+
+#制定jquery的路径
+CKEDITOR_JQUERY_URL ='https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'
