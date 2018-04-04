@@ -135,14 +135,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('sucessLogin')
 # LOGIN_URL = reverse_lazy('login')
 # LOGOUT_URL = reverse_lazy('logout')
 
-#制定jquery的路径
-CKEDITOR_JQUERY_URL ='https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-CKEDITOR_UPLOAD_PATH = "content"
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': 'Full',
-#     },
-# }
+CKEDITOR_UPLOAD_PATH = "uploads/"
