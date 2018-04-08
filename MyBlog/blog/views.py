@@ -28,13 +28,45 @@ def ckeForm(request):
     return render(request,'registration/cke.html',{'form':form})
 
 def test(request):
-    blogs = ckeditorBlog.objects.filter(id=2)
-    power = re.compile(
-        r'<img alt="" src="/media/uploads/2018/04/04/u6489861613933641907fm27gp0_E6SKzcp.jpg" style="height:313px; width:500px" />', re.I)
-    bs = ''
+    blogs = ckeditorBlog.objects.filter(id=3)
+    # 正则表达式需要重写，此处应急使用
+    power = r'<img alt="" src="/\w+/\w+/\w+/\w+/\w+/\w+.jpg" style="\w+:\w+;\w+:\w+" />'
+    rs = ''
     for blog in blogs:
         # print(blog.content)
-        bs = power.match(blog.content)
-        print(bs)
-    content = {'blogs':bs}
+        # bs = blog.content[3:123]
+        print(blog.content)
+        rs = re.findall(power,blog.content)
+    content = {'blogs':rs}
     return render(request,'registration/test.html',content)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
